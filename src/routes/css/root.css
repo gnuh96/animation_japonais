@@ -1,1 +1,38 @@
+.Root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.RootHeader {
+  display: flex;
+}
 
+.RootContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.RootTag {
+  height: 100%;
+  flex: 1;
+}
+
+.RootScreen {
+  height: 100%;
+  flex: 1;
+}
+
+.RootStep {
+  height: 100%;
+  flex: 1;
+}
+
+.listStep {
+  height: 4rem;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1rem; */
+  margin-bottom: 1rem;
+}
