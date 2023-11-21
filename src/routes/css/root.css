@@ -1,0 +1,18 @@
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.mapboxgl-canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapperMap {
+  height: 100%;
+  display: flex;
+}
+
+.mapboxgl-ctrl-geocoder {
+  width: 100% !important;
+}
