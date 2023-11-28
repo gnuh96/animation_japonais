@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import './Login.css'
 import Icon from '../icon/Icon'
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -12,6 +14,9 @@ function Login() {
     console.log('Username:', username, 'Password:', password)
   }
 
+  const handleRegister = () => {
+    navigate('/register')
+  }
   return (
     <div>
       <div id='icon'>
@@ -40,6 +45,9 @@ function Login() {
         </div>
         <button type='submit' className='login-button'>
           Connexion
+        </button>
+        <button type='button' className='login-button' onClick={handleRegister}>
+          S'inscrire
         </button>
       </form>
     </div>

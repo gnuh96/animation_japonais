@@ -1,5 +1,5 @@
-/* Login.css */
-.login-form {
+/* Register.css */
+.register-form {
     
     margin-top: 5%;
     margin-left: 40%;
@@ -13,23 +13,23 @@
     margin-top: 5%;
   }
   
-  .login-form input[type="text"],
-  .login-form input[type="password"] {
+  .register-form input[type="text"],
+  .register-form input[type="email"],
+  .register-form input[type="password"] {
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid #ccc;
     margin-left: 10px;
   }
   
-  .login-form button {
-    padding: 8px 15px;
+  .register-form button {
+    padding: 8px 11px;
     background-color: blue;
     color: white;
     border: none;
     cursor: pointer;
   }
-
-  .login-form button[type="button"] {
+  
+  .register-form button[type="button"] {
     margin-left: 10px;
   }
-  
