@@ -1,38 +1,48 @@
 import React, { useState } from 'react';
-import "./Login.css";
+import "./Register.css";
 import Icon from '../icon/Icon'
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Register() {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Vous pouvez ajouter ici la logique pour traiter les données de connexion
-    console.log('Username:', username, 'Password:', password);
+    console.log('Username:', username, 'Email:', email, 'Password:', password);
   };
 
-
-  const handleRegister =() => {
-    navigate("/register");
+  const handleLogin =() => {
+    navigate("/login");
   }
   return (
     <div>
       <div id="icon">
     <Icon type='logo' size='25%'/>
     </div>
-    <form onSubmit={handleSubmit} className="login-form">
+    <form onSubmit={handleSubmit} className="register-form">
      
       <div>
         <label htmlFor="username">Identifiant :</label>
         <input
           type="text"
           id="username"
-          className="login-input"  // Ajout de la classe pour le style
+          className="register-input"  // Ajout de la classe pour le style
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Email :</label>
+        <input
+          type="email"
+          id="email"
+          className="register-input"  // Ajout de la classe pour le style
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div>
@@ -40,16 +50,16 @@ function Login() {
         <input
           type="password"
           id="password"
-          className="login-input"  // Ajout de la classe pour le style
+          className="register-input"  // Ajout de la classe pour le style
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit" className="login-button">Connexion</button>
-      <button type="button" className="login-button" onClick={handleRegister}>S'inscrire</button>
+      <button type="submit" className="register-button">Inscription</button>
+      <button type="button" className="login-button" onClick={handleLogin}>Se connecter</button>
     </form>
     </div>
   );
 }
 
-export default Login;
+export default Register;
