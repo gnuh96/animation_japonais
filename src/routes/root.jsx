@@ -24,9 +24,16 @@ function Root(props) {
               boxSizing: 'border-box',
             },
           }}>
-          <Box>
-            <Icon type='logo' iconStyle={{height: '100%'}} />
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              paddingTop: '20px',
+            }}>
+            <Icon type='logo' iconStyle={{height: '50px', width: '100%'}} />
           </Box>
+
           <Box
             sx={{
               paddingLeft: '12px',
