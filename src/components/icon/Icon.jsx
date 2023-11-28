@@ -19,7 +19,7 @@ export default function Icon({
       <img
         src={logo}
         alt='icon'
-        style={{...iconStyle, height: size, width: size}}
+        style={{...iconStyle, width: size}}
       />
     ),
   }

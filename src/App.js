@@ -1,6 +1,6 @@
 import "./App.css";
 import { getDb } from "./services/db";
-import Login from './components/Login';
+import Login from './components/login/Login';
 
 function App() {
   const test = getDb()
