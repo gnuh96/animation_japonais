@@ -1,38 +1,32 @@
-.Root {
+.rootContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
-}
-.RootHeader {
-  display: flex;
-}
-
-.RootContainer {
-  display: flex;
-  margin-top: 20px;
-}
-
-.RootTag {
-  height: 100%;
-  flex: 1;
-}
-
-.RootScreen {
-  height: 100%;
-  flex: 1;
-}
-
-.RootStep {
-  height: 100%;
-  flex: 1;
-}
-
-.listStep {
-  height: 4rem;
-  border: 1px solid;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  /* padding: 1rem; */
-  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.outletContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 108px);
+  padding-top: 68px;
+}
+
+.footerFixed {
+  background-color: #d0d8e5;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footerFixed .appVersion {
+  margin-left: 20px;
 }
