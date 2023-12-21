@@ -7,6 +7,7 @@ import {
 import InfoIcon from '@mui/icons-material/Info'
 
 const ItemGrid = ({listProjet}) => {
+  console.log('listProjec props', listProjet)
   return (
     <ImageList cols={3}>
       {listProjet.map((item, i) => (
