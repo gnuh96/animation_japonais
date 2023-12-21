@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import {IconButton, Popover} from '@mui/material'
-import logoApp from '../../assets/png/IMG423.png'
+import logoApp from '../../assets/png/Original on Transparent.png'
 import MenuIcon from '@mui/icons-material/Menu'
 import Icon from '../icon/Icon'
 import {useNavigate} from 'react-router-dom'
@@ -47,7 +47,6 @@ export default function AppBarCustom(props) {
   const handleLogout = async () => {
     try {
       await signOut(auth)
-      console.log('User signed out successfully')
       navigate('/auth/login')
     } catch (error) {
       console.error('Error signing out:', error.message)
@@ -100,9 +99,6 @@ export default function AppBarCustom(props) {
               alt='logoApp'
               onClick={handleClickLogo}
             />
-            <div style={{width: '250px', display: 'flex', alignItems: 'end'}}>
-              <span>pour suivre le mouvement</span>
-            </div>
           </Box>
           <Box
             sx={{display: 'flex', justifyContent: 'flex-end', width: '100%'}}>

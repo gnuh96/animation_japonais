@@ -1,5 +1,5 @@
 import search from '../../assets/svg/search.svg'
-import logo from '../../assets/png/IMG423.png'
+import logo from '../../assets/png/Original on Transparent.png'
 import ContactSvg from '../../assets/icones/accountMenu/ContactSvg'
 import HelpSvg from '../../assets/icones/accountMenu/HelpSvg'
 import LoginSvg from '../../assets/icones/accountMenu/LoginSvg'
