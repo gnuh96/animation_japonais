@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useEffect, useState} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -8,11 +8,27 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Icon from '../icon/Icon'
 import {useNavigate} from 'react-router-dom'
 import './styles.css'
+import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth'
 
 export default function AppBarCustom(props) {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = useState(null)
   const [hoveredItem, setHoveredItem] = useState(-1)
+  const [email, setEmail] = useState('')
+
+  useEffect(() => {
+    const auth = getAuth()
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (user) {
+        setEmail(user.email)
+      }
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [])
+
   const handleClick = event => {
     setHoveredItem(-1)
     setAnchorEl(event.currentTarget)
@@ -25,6 +41,18 @@ export default function AppBarCustom(props) {
 
   const open = Boolean(anchorEl)
   const id = open ? 'simple-popover' : undefined
+
+  const auth = getAuth()
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth)
+      console.log('User signed out successfully')
+      navigate('/auth/login')
+    } catch (error) {
+      console.error('Error signing out:', error.message)
+    }
+  }
 
   const listItemWebAccountMenu = [
     {
@@ -39,11 +67,15 @@ export default function AppBarCustom(props) {
       icon: 'contact_desktop_menu',
     },
     {
-      onClick: () => navigate('/auth/login'),
-      title: 'Se connecter',
+      onClick: handleLogout,
+      title: 'Se deconnecter',
       icon: 'login_desktop_menu',
     },
   ]
+
+  if (!email) {
+    listItemWebAccountMenu.pop()
+  }
 
   const handleClickLogo = () => {
     navigate('/')
@@ -97,6 +129,11 @@ export default function AppBarCustom(props) {
                   horizontal: 'right',
                 }}>
                 <div className='popoverAccount'>
+                  {email && (
+                    <div className='accountInfos'>
+                      <div className='--blackPopover'>{email}</div>
+                    </div>
+                  )}
                   {listItemWebAccountMenu.map((item, i) => {
                     return (
                       <div

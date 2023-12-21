@@ -1,14 +1,9 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app'
-import {getAnalytics} from 'firebase/analytics'
 import {getFirestore} from 'firebase/firestore'
-import {getAuth} from 'firebase/auth'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 let db = false
 let auth
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const getDb = () => {
   if (!db) {
     const firebaseConfig = {
@@ -25,6 +20,14 @@ export const getDb = () => {
     const app = initializeApp(firebaseConfig)
     auth = getAuth(app)
     db = getFirestore(app)
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        console.log('User is signed in:', user)
+      } else {
+        console.log('No user is signed in')
+      }
+    })
   }
 
   return {db, auth}

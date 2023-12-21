@@ -1,0 +1,88 @@
+.inputInAppWrapper {
+  border-radius: 10px;
+  min-height: 3.5rem;
+  width: 100%;
+  padding: 0px;
+  position: relative;
+}
+
+.allInputContainer {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.allInputContainer.rowMargin {
+  margin-left: 21px;
+  margin-right: 21px;
+}
+
+.inputInAppWrapper input:focus {
+  border: 1px solid #caa756;
+}
+
+.inputInAppWrapper input {
+  padding: 0px;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  border: transparent;
+  background-color: #f7f9ff;
+  text-indent: 15px;
+  border: 1px transparent solid;
+  font-size: 16px;
+}
+
+.inputInAppWrapper input:disabled {
+  color: #424d66;
+  opacity: 1;
+}
+
+.inputInAppWrapper label {
+  font-size: 16px;
+  color: #7a8295;
+}
+
+.inputInAppWrapper input.errorInput {
+  border: 1px solid #ff0000;
+}
+
+.errorFormField {
+  color: #ff0000;
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+
+.inputInAppWrapper button {
+  position: absolute;
+  right: 0px;
+  top: 10.5px;
+}
+
+.labelInputInApp {
+  font-size: 1rem;
+  line-height: 1rem;
+  padding-left: 1rem;
+  color: #535e79;
+}
+
+.inputInAppWrapper input.dateInput {
+  width: 95%;
+  min-width: 95%;
+  font-family: inherit;
+  padding-inline-start: 0;
+  display: flex;
+  cursor: default;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inputInAppWrapper .passwordIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

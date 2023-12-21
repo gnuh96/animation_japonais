@@ -1,0 +1,47 @@
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.registerContainer .LogoImageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0 3rem 0;
+}
+
+.registerContainer .LogoImageWrapper img {
+  width: 3rem;
+}
+
+.selectContainer {
+  width: 100%;
+  height: 4.5rem;
+}
+
+.RegisterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-top: 2rem;
+}
+
+.confirmationInscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+}
+
+.container_text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+}

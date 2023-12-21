@@ -1,0 +1,36 @@
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 100%;
+}
+
+.submitButton input {
+  flex: 1;
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: 10px;
+  border: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  background-color: #CAA756;
+}
+
+.submitButton .margin-left {
+  margin-left: 10px;
+}
+
+.submitButton button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 2.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  background-color: #CAA756;
+}

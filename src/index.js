@@ -4,6 +4,20 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 import {RouterProvider} from 'react-router-dom'
 import {router} from './helpers/navigation.router'
+import {initializeApp} from 'firebase/app'
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDCL0l7YJDie8AiNFPWiKt66nr51Bo9z9U',
+  authDomain: 'patrimoine-fa704.firebaseapp.com',
+  projectId: 'patrimoine-fa704',
+  storageBucket: 'patrimoine-fa704.appspot.com',
+  messagingSenderId: '51727144903',
+  appId: '1:51727144903:web:ffa628898a49c9f0f92be2',
+  measurementId: 'G-011Z3WPN98',
+}
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

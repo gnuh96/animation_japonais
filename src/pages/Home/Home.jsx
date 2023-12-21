@@ -24,9 +24,6 @@ function Home(props) {
     testImage,
     testImage,
     testImage,
-    testImage,
-    testImage,
-    testImage,
   ]
   return (
     <div className='home'>

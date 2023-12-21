@@ -1,9 +1,25 @@
 import './css/root.css'
-import {Outlet} from 'react-router-dom'
+import {Outlet, useNavigate} from 'react-router-dom'
 import packageJson from '../../package.json'
 import AppBarCustom from '../components/AppBarCustom/AppBarCustom'
+import {useEffect} from 'react'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 
 function Root(props) {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const auth = getAuth()
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (!user) {
+        navigate('/auth/login')
+      }
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [navigate])
   return (
     <div className='rootContainer'>
       <AppBarCustom />
