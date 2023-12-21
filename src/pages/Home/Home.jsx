@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import './Home.css'
 import InputSearch from '../../components/inputSearch/InputSearch'
-import testImage from '../../assets/png/image 1.png'
 import ItemGrid from '../../components/ItemGrid/ItemGrid'
 Home.propTypes = {}
 
@@ -12,19 +11,11 @@ function Home(props) {
   const [tag, setTag] = useState()
   const listBar = [
     {title: 'A propos', onClick: () => navigate('/')},
-    {title: 'Comprendre l’animation', onClick: () => navigate('/')},
+    {title: 'Comprendre l’animation', onClick: () => navigate('/intrucstion')},
     {title: 'Communauté', onClick: () => navigate('/')},
   ]
   const listTab = ['Tag 1', 'Tag 2', 'Tag 3']
 
-  const images = [
-    testImage,
-    testImage,
-    testImage,
-    testImage,
-    testImage,
-    testImage,
-  ]
   return (
     <div className='home'>
       <div className='homeBar'>
@@ -59,7 +50,7 @@ function Home(props) {
           ))}
         </div>
       </div>
-      <ItemGrid images={images} />
+      <ItemGrid />
     </div>
   )
 }

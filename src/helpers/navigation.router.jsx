@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home'
 import Auth from '../routes/auth'
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
+import Intrucstion from '../pages/Intrustion/Intrucstion'
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,11 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+        children: [],
+      },
+      {
+        path: '/intrucstion',
+        element: <Intrucstion />,
         children: [],
       },
     ],
