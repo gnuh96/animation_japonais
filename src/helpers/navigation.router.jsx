@@ -5,6 +5,7 @@ import Auth from '../routes/auth'
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import Intrucstion from '../pages/Intrustion/Intrucstion'
+import DetailProject from '../pages/DetailProjet/DetailProjet'
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ export const router = createBrowserRouter([
       {
         path: '/intrucstion',
         element: <Intrucstion />,
+        children: [],
+      },
+      {
+        path: '/detail/:id',
+        element: <DetailProject />,
         children: [],
       },
     ],
