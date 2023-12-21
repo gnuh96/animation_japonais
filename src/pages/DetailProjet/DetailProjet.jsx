@@ -1,4 +1,3 @@
-import './DetailProjet.css'
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import firebase from 'firebase/app'
@@ -7,12 +6,19 @@ import {collection, doc, getDoc} from 'firebase/firestore'
 import 'firebase/firestore'
 
 import {db} from '../../services/db.services'
+import InputSearch from '../../components/inputSearch/InputSearch'
+import {DetailRightPane} from '../../components/DetailRightPane/DetailRightPane'
+
+import s from './style.module.css'
 
 function DetailProjet(props) {
   // recuperer id depuis l'url
   const {id} = useParams()
   // data
   const [projectData, setProjectData] = useState(null)
+
+  // search
+  const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +40,26 @@ function DetailProjet(props) {
     fetchData()
   }, [id])
 
-  return <div>Detail Projet - {id}</div>
+  return (
+    <div className={s.container}>
+      {
+        //Detail Projet - {id}
+        /**
+               <InputSearch
+        initialList={null}
+        placeholder='Recherche'
+        searchKey='title'
+        searchValue={null}
+        setSearchValue={() => {}}
+        setResults={null}
+      />
+         */
+      }
+      <div className={s.rightPane}>
+        <DetailRightPane />
+      </div>
+    </div>
+  )
 }
 
 export default DetailProjet
