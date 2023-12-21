@@ -21,8 +21,15 @@ function Home(props) {
         const querySnapshot = await getDocs(collection(db, 'projet'))
         querySnapshot.forEach(doc => {
           const data = doc.data()
-          newlist.push(data)
+          //const data = doc
+          console.log('doc ID', doc.id)
+          const newData = {id: doc.id, ...data}
+          newlist.push(newData)
+          //newlist.push(data)
         })
+
+        //
+        console.log('newList', newlist)
         setListProjet(newlist)
       } catch (error) {
         console.error('Error fetching data:', error)
