@@ -13,7 +13,7 @@ import {useNavigate} from 'react-router-dom'
 
 // listProject props : all tuples
 const ItemGrid = ({listProjet}) => {
-  console.log('listProjec props', listProjet)
+  //console.log('listProjec props', listProjet)
 
   // TODO : navigation to detail page
   const navigate = useNavigate()

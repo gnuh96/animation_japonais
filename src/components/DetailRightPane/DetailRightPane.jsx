@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import s from './style.module.css'
 
 export function DetailRightPane({state, onItemClick}) {
-  console.log(state)
+  //console.log(state)
   return (
     <div className={s.detailRightPane}>
       <div className={s.buttonGroup}>

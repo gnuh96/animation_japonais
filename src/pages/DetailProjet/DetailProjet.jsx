@@ -28,7 +28,7 @@ function DetailProjet(props) {
         const projectDoc = await getDoc(projectDocRef)
 
         if (projectDoc.exists()) {
-          console.log('Document found !', projectDoc.data())
+          //console.log('Document found !', projectDoc.data())
           setProjectData(projectDoc.data())
         } else {
           console.log('Document not found')
