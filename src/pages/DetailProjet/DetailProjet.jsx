@@ -40,6 +40,12 @@ function DetailProjet(props) {
     fetchData()
   }, [id])
 
+  const [currentState, setcurrentState] = useState('STUDY')
+
+  function updateState(state) {
+    setcurrentState(state)
+  }
+
   return (
     <div className={s.container}>
       {
@@ -56,7 +62,7 @@ function DetailProjet(props) {
          */
       }
       <div className={s.rightPane}>
-        <DetailRightPane />
+        <DetailRightPane onItemClick={updateState} state={currentState} />
       </div>
     </div>
   )

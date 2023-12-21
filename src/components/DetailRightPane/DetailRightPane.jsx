@@ -1,31 +1,26 @@
 import React, {useState} from 'react'
 import s from './style.module.css'
 
-export function DetailRightPane({}) {
-  const [selectedState, setSelectedState] = useState('STUDY')
-
-  const handleSelectState = selectedState => {
-    setSelectedState(selectedState)
-  }
-
+export function DetailRightPane({state, onItemClick}) {
+  console.log(state)
   return (
     <div className={s.detailRightPane}>
       <div className={s.buttonGroup}>
         <button
-          className={selectedState === 'STUDY' ? s.selected : s.notSelected}
-          onClick={() => handleSelectState('STUDY')}>
+          className={state === 'STUDY' ? s.selected : s.notSelected}
+          onClick={() => onItemClick('STUDY')}>
           STUDY
         </button>
         <br />
         <button
-          className={selectedState === 'GENGA' ? s.selected : s.notSelected}
-          onClick={() => handleSelectState('GENGA')}>
+          className={state === 'GENGA' ? s.selected : s.notSelected}
+          onClick={() => onItemClick('GENGA')}>
           GENGA
         </button>
         <br />
         <button
-          className={selectedState === 'FINAL' ? s.selected : s.notSelected}
-          onClick={() => handleSelectState('FINAL')}>
+          className={state === 'FINAL' ? s.selected : s.notSelected}
+          onClick={() => onItemClick('FINAL')}>
           FINAL
         </button>
       </div>
