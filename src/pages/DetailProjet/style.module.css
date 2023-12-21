@@ -1,18 +1,16 @@
 .container {
-    display: flex;
-    justify-content: flex-end;
+  width: 100%; 
+  padding: 10px; 
+  display: flex;
+  /*justify-content: flex-end;*/
+  justify-content: space-evenly;
   }
   
-  
-  .container {
-    width: 100%; 
-    padding: 10px; 
-  }
-  
+
   .rightPane {
     background: linear-gradient(to bottom, #8B4513, #A56938, #C27C3E, #DD8C47, #E9A16B, #FFD700); /* Lighter Brown to Orange gradient */
-    margin-right: 6%;
     margin-top: 2%;
     border-radius: 2rem;
+    display: flex;
   }
   

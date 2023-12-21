@@ -10,6 +10,7 @@ import InputSearch from '../../components/inputSearch/InputSearch'
 import {DetailRightPane} from '../../components/DetailRightPane/DetailRightPane'
 
 import s from './style.module.css'
+import {DisplayInteractiveImage} from '../../components/DisplayInteractiveImage/DisplayInteractiveImage'
 
 function DetailProjet(props) {
   // recuperer id depuis l'url
@@ -40,10 +41,24 @@ function DetailProjet(props) {
     fetchData()
   }, [id])
 
+  //
   const [currentState, setcurrentState] = useState('STUDY')
+
+  // images
 
   function updateState(state) {
     setcurrentState(state)
+  }
+
+  function getImageSrc() {
+    if (currentState === 'STUDY') {
+      return projectData?.thumbnail
+    } else if (currentState === 'GENGA') {
+      return projectData?.genga
+    } else if (currentState === 'FINAL') {
+      return projectData?.final
+    }
+    return null
   }
 
   return (
@@ -61,6 +76,12 @@ function DetailProjet(props) {
       />
          */
       }
+      <div>
+        <h1>{projectData?.title}</h1>
+        <h2>Par : {projectData?.userMail}</h2>
+      </div>
+
+      <DisplayInteractiveImage imageSrc={getImageSrc()} />
       <div className={s.rightPane}>
         <DetailRightPane onItemClick={updateState} state={currentState} />
       </div>
